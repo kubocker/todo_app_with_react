@@ -1,7 +1,6 @@
 import { Button, Card, Checkbox, Group, } from "@mantine/core";
 
 /* app */
-import styles from './TodoItem.module.css';
 import { TodoResponse } from "../models/todos";
 
 
@@ -17,15 +16,24 @@ const TodoItem: React.FC<TodoItemProps> = ({
   onComplete,
   onDelete
 }) => {
+
+
   return (
-    <Card>
-      <Group>
+    <Card
+      withBorder={true}
+      shadow={'sm'}
+      radius={'md'}
+    >
+      <Group position={'apart'}>
         <Checkbox
-          onChange={(event) => onComplete(item.todoId, event.target.checked)}
+          label={item.title}
+          checked={item.isCompleted}
+          disabled={item.isCompleted}
+          onChange={(event) => {
+            console.log(event.target.checked)
+            onComplete(item.todoId, event.target.checked)
+          }}
         />
-        <label className={item.isCompleted ? `${styles.todo__label} ${styles.completed}` : styles.todo__label}>
-          {item.title}
-        </label>
         <Button onClick={() => onDelete(item.todoId)}>削除</Button>
       </Group>
     </Card>

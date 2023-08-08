@@ -1,4 +1,4 @@
-import { BehaviorSubject, Observable, firstValueFrom, mergeMap, } from "rxjs";
+import { BehaviorSubject, Observable, firstValueFrom, } from "rxjs";
 
 /* app */
 import { ITodos } from "../interfaces/repositories/ITodos";
@@ -36,19 +36,18 @@ export default class TodosRepository implements ITodos {
     isCompleted: boolean
   ): Promise<void> {
     return new Promise(async (resolve) => {
-      this.todos$.pipe(
-        mergeMap(async (items) => {
-          return items.map(res => {
-            if (res.todoId === todoId) {
-              return {
-                ...res,
-                isCompleted,
-              }
+      const todos = await firstValueFrom(this.todos$);
+      this.todos$.next(
+        todos.map(res => {
+          if (res.todoId === todoId) {
+            return {
+              ...res,
+              isCompleted,
             }
-            return res;
-          })
+          }
+          return res;
         })
-      );
+      )
       setTimeout(() => {
         resolve() ;
       }, 500);

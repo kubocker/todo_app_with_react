@@ -1,11 +1,12 @@
+import { Center, Title } from '@mantine/core'
+
 /* app */
-import './App.css'
 import { useTodoList } from './facades/useTodoList'
 import { useTodoForm } from './facades/useTodoForm'
+import { mockTodos } from './__mocks__/todos'
 import TodosUsecase from './usecases/TodosUsecase'
 import TodosRepository from './repositories/TodosRepository'
 import TodoListPresenter from './presenters/TodoListPresenter'
-import { mockTodos } from './__mocks__/todos'
 
 
 
@@ -25,6 +26,9 @@ function App() {
 
   return (
     <>
+      <Center>
+        <Title>Todoアプリ</Title>
+      </Center>
       <TodoListPresenter mediator={{ form, todos }} />
     </>
   )

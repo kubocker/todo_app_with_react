@@ -1,3 +1,4 @@
+import { Space } from "@mantine/core";
 import { TodoListResponse } from "../models/todos";
 import TodoItem from "./TodoItem";
 
@@ -24,12 +25,14 @@ const TodoList: React.FC<TodoListProps> = ({
   return (
     <ul>
       {items.map(item => (
-        <TodoItem
-          key={item.todoId}
-          item={item} 
-          onComplete={handleComplete}
-          onDelete={handleDelete}
-        />
+        <div key={item.todoId}>
+          <TodoItem
+            item={item} 
+            onComplete={handleComplete}
+            onDelete={handleDelete}
+          />
+          <Space h={'xs'} />
+        </div>
       ))}
     </ul>
   )
