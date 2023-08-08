@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "kubocker-aa1ba"
+  },
+  "targets": {
+    "kubocker-aa1ba": {
+      "hosting": {
+        "demo-todo-app-with-react": [
+          "demotodoappwithreact"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
