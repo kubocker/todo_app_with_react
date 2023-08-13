@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "unit:test": "vitest",
+    "unit:ui": "vitest --ui",
+    "unit:coverage": "vitest --coverage",
     "deploy": "./scripts/deploy.sh",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -15,9 +18,12 @@
     "@mantine/core": "^6.0.18",
     "@mantine/form": "^6.0.18",
     "@mantine/hooks": "^6.0.18",
+    "@vitest/coverage-c8": "^0.33.0",
+    "@vitest/ui": "^0.34.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "vitest": "^0.34.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
