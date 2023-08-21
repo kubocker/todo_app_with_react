@@ -29,12 +29,14 @@ const TodoItem: React.FC<TodoItemProps> = ({
           label={item.title}
           checked={item.isCompleted}
           disabled={item.isCompleted}
-          onChange={(event) => {
-            console.log(event.target.checked)
-            onComplete(item.todoId, event.target.checked)
-          }}
+          onChange={(event) => onComplete(item.todoId, event.target.checked)}
         />
-        <Button onClick={() => onDelete(item.todoId)}>削除</Button>
+        <button
+          className="btn btn-danger btn-sm"
+          onClick={() => onDelete(item.todoId)}
+        >
+          削除
+        </button>
       </Group>
     </Card>
   )

@@ -1,11 +1,12 @@
-import { Center, Title } from '@mantine/core'
 
 /* app */
+import './App.css';
 import { useTodoList } from './facades/useTodoList'
 import { useTodoForm } from './facades/useTodoForm'
 import TodosUsecase from './usecases/TodosUsecase'
 import TodosRepository from './repositories/TodosRepository'
 import TodoListPresenter from './presenters/TodoListPresenter'
+import { Button, Navbar } from 'react-daisyui'
 
 
 
@@ -23,9 +24,15 @@ function App() {
 
   return (
     <>
-      <Center>
-        <Title>Todoアプリ</Title>
-      </Center>
+      <div className="navbar bg-base-100">
+        <div className="navbar-start">
+        </div>
+        <div className="navbar-center navbar bg-neutral text-neutral-content">
+          <a className="btn btn-ghost normal-case text-xl">Demo Todo</a>
+        </div>
+        <div className="navbar-end">
+        </div>
+      </div>
       <TodoListPresenter mediator={{ form, todos }} />
     </>
   )

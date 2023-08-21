@@ -28,11 +28,16 @@ const TodoForm: React.FC<TodoFormProps> = ({
   return (
     <ul>
       <Grid>
-        <Grid.Col span={12}>
+        <Grid.Col span={10}>
           <TextInput {...form.getInputProps('title')} />
         </Grid.Col>
-        <Grid.Col span={1}>
-          <Button onClick={handleAdd}>追加</Button>
+        <Grid.Col span={2}>
+          <button
+            className="btn btn-primary btn-sm"
+            onClick={handleAdd}
+          >
+            追加
+          </button>
         </Grid.Col>
       </Grid>
     </ul>
