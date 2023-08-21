@@ -40,7 +40,9 @@ const TodoListPresenter: React.FC<TodoListPresenterProps> = ({
   return (
     <Container size={800}>
       <Stack>
-        <TodoForm onAdd={handleAdd} />
+        <TodoForm
+          onAdd={handleAdd}
+        />
         <TodoList
           items={todos.items}
           onComplete={handleComplete}
