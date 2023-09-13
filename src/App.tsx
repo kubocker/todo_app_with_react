@@ -27,7 +27,7 @@ function App() {
         <div className="navbar-start">
         </div>
         <div className="navbar-center navbar bg-neutral text-neutral-content">
-          <a className="btn btn-ghost normal-case text-xl">Todoアプリ</a>
+          <a className="btn btn-ghost normal-case text-xl">Todo</a>
         </div>
         <div className="navbar-end">
         </div>
