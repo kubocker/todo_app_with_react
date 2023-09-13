@@ -6,7 +6,6 @@ import { useTodoForm } from './facades/useTodoForm'
 import TodosUsecase from './usecases/TodosUsecase'
 import TodosRepository from './repositories/TodosRepository'
 import TodoListPresenter from './presenters/TodoListPresenter'
-import { Button, Navbar } from 'react-daisyui'
 
 
 
@@ -28,7 +27,7 @@ function App() {
         <div className="navbar-start">
         </div>
         <div className="navbar-center navbar bg-neutral text-neutral-content">
-          <a className="btn btn-ghost normal-case text-xl">Demo Todo</a>
+          <a className="btn btn-ghost normal-case text-xl">Todoアプリ</a>
         </div>
         <div className="navbar-end">
         </div>
